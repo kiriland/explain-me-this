@@ -1,5 +1,5 @@
 ## Explain Me This
-An app that help you undertand the complex research papers.
+An app that will help you understand research papers.
 
 ## TODO
 - [ ] Authentication
