@@ -6,6 +6,7 @@ import { Button } from "~/components/ui/button"
 
 
 export default function TopNav() {
+   
     return (
         <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-950/90 text-gray-950 dark:text-gray-50">
         <div className="w-full max-w-7xl mx-auto px-4">
@@ -51,6 +52,7 @@ export default function TopNav() {
             </SignInButton>
           </SignedOut>
           <SignedIn>
+            
             <UserButton />
           </SignedIn>
             </div>
