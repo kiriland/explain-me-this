@@ -18,11 +18,13 @@ import {
  */
 export const createTable = pgTableCreator((name) => `explain-me-this_${name}`);
 
-export const posts = createTable(
-  "post",
+export const docs = createTable(
+  "doc",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    name: varchar("name", { length: 64 }).notNull(),
+    url: varchar("url", { length: 1024 }).notNull(),
+    userId: varchar("user_id", { length: 256 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -30,7 +32,5 @@ export const posts = createTable(
       () => new Date()
     ),
   },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  })
+  
 );
